@@ -1,0 +1,6 @@
+{
+    "watch": ["server", "src"],
+    "ext": "ts,json,js",
+    "ignore": ["server/**/*.spec.ts"],
+    "exec": "cross-env MODE=development PORT=3000 ts-node-esm -T ./server/app.ts"
+}
