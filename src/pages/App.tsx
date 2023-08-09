@@ -7,7 +7,7 @@ import {
 } from "react-router-dom"
 
 import * as style from "./App.module.less"
-import SomePage from "./pages/SomePage/SomePage"
+import SomePage from "./SomePage/SomePage"
 
 import reloader from "../tools/reloader"
 import { io } from "socket.io-client"
