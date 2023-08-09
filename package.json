@@ -4,6 +4,9 @@
   "description": "Parcel+React+TypeScript+Express template",
   "source": "src/index.html",
   "type": "module",
+  "exports": {
+    "./var": "./src/variables.less"
+  },
   "scripts": {
     "start": "npm run parcel:dev",
     "parcel:watch": "rm -rf ./build && parcel watch --dist-dir ./build --no-hmr",
