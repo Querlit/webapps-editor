@@ -1,11 +1,13 @@
 
-# Preview
+# Source Eyes WebApps Editor
 
-![preview](./src/assets/prev.png)
+WebApps builder with logical blocks, design components and the freedom of action.
 
-# Source Eyes template
+# ToDo's
 
-Base for quick start developing web application using React + TypeScipt + Parcel (Frontend) and Express (Backend). You may replace Express on another backend technology.
+- Develop UI components
+- Implement the intended design
+- Start developing logic
 
 # Dependencies
 
@@ -19,10 +21,6 @@ Base for quick start developing web application using React + TypeScipt + Parcel
 - Development dependencies
   - Easy usage for some env — [CrossEnv + Docs](https://www.npmjs.com/package/cross-env)
   - Bundler — [Parcel + Docs](https://parceljs.org/recipes/react/)
-
-# ToDo's
-
-- Integrate testing module
 
 # Installing
 
