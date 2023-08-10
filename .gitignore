@@ -2,3 +2,5 @@
 /.parcel-cache
 /dist
 /build
+/src/components/**/*.css
+/src/pages/**/*.css
