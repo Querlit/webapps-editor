@@ -8,6 +8,7 @@ import {
 
 import * as style from "./App.module.less"
 import SomePage from "./SomePage/SomePage"
+import DemoUI from "./DemoUI/DemoUI"
 
 import reloader from "../tools/reloader"
 import { io } from "socket.io-client"
@@ -21,6 +22,7 @@ export default function App() {
             <div className={style.wrapper}>
                 <Routes>
                     <Route path="/" element={<SomePage />} />
+                    <Route path="/demo" element={<DemoUI />} />
                 </Routes>
             </div>
         </Router>

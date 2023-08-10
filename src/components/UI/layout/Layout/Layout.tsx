@@ -1,15 +1,14 @@
 import React from 'react'
-import * as style from "./Layout.module.less"
+import * as internalStyle from "./Layout.module.less"
 
 type Props = {
-    children: React.ReactNode,
+    children?: React.ReactNode,
+    style?: React.CSSProperties
 }
 
-const Layout: React.FC<Props> = ({
-    children,
-}) => {
+const Layout: React.FC<Props> = ({ children, style }) => {
   return (
-    <div className={style.wrapper}>
+    <div className={internalStyle.wrapper} style={style}>
         {children}
     </div>
   )

@@ -1,15 +1,17 @@
 import React from 'react'
-import * as style from "./ActiveLayout.module.less"
+import * as internalStyle from "./ActiveLayout.module.less"
+
+type Type = "active" | "hover"
 
 type Props = {
-    children: React.ReactNode,
+  children?: React.ReactNode,
+  style?: React.CSSProperties,
+  type?: Type,
 }
 
-const ActiveLayout: React.FC<Props> = ({
-    children,
-}) => {
+const ActiveLayout: React.FC<Props> = ({ children, style, type }) => {
   return (
-    <div className={style.wrapper}>
+    <div className={internalStyle.wrapper} style={style}>
         {children}
     </div>
   )

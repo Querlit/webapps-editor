@@ -4,3 +4,4 @@
 /build
 /src/components/**/*.css
 /src/pages/**/*.css
+/src/variables.css
