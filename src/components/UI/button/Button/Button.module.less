@@ -1,4 +1,22 @@
 
+@import "variables.less";
+
 .wrapper {
-    
+    padding: 10px;
+    background-color: @background-light-color;
+
+    border: @light-border-thickness solid @border-dark-color;
+    border-radius: @border-radius;
+
+    transition: 0.05s ease-out;
+
+    &:hover {
+        background-color: @background-dark-color;
+    }
+}
+
+.active {
+    border: @medium-border-thickness solid @border-dark-color;
+    box-shadow: @box-shadow;
+    background-color: @background-dark-color;
 }

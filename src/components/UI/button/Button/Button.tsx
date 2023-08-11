@@ -1,17 +1,27 @@
-import React from 'react'
-import * as style from "./Button.module.less"
+import React, { useState } from 'react'
+import * as internalStyle from "./Button.module.less"
 
 type Props = {
-    children: React.ReactNode,
+    children?: React.ReactNode,
+    className?: string,
+    active?: boolean,
+    style?: React.CSSProperties
 }
 
 const Button: React.FC<Props> = ({
     children,
+    className,
+    active,
+    style
 }) => {
+  const [isActive, setIsActive] = useState(false)
   return (
-    <div className={style.wrapper}>
+    <button className={[
+      internalStyle.wrapper,
+      isActive ? internalStyle.active : ""
+    ].join(" ").trim()} style={style} onClick={() => setIsActive(!isActive)}>
         {children}
-    </div>
+    </button>
   )
 }
 

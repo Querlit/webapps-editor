@@ -2,9 +2,21 @@
 @import "variables.less";
 
 .wrapper {
-    background-color: @background-dark-color;
+    padding: 10px;
+    background-color: transparent;
 
-    border: @medium-border-thickness solid @border-light-color;
+    border: @medium-border-thickness solid transparent;
     border-radius: @border-radius;
+
+    transition: 0.05s ease-out;
+}
+
+.active {
+    background-color: @background-dark-color;
+    border-color: @border-light-color;
     box-shadow: @box-shadow;
+}
+
+.hover:hover {
+    .active()
 }
