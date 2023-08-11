@@ -1,17 +1,22 @@
 import React from 'react'
 import * as style from "./ButtonWithIcon.module.less"
 
+import Button from '../Button/Button'
+import Icon from '../../icon/Icon/Icon'
+
+import type { IconsType } from '../../icon/Icon/type'
+
 type Props = {
-    children: React.ReactNode,
+    icon: IconsType
 }
 
 const ButtonWithIcon: React.FC<Props> = ({
-    children,
+    icon,
 }) => {
   return (
-    <div className={style.wrapper}>
-        {children}
-    </div>
+    <Button>
+      <Icon icon={icon} />
+    </Button>
   )
 }
 

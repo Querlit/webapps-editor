@@ -1,6 +1,8 @@
 
 declare module "*.png"
 declare module "*.module.less"
+declare module "*.svg"
+
 
 
 // Might be useful in future
