@@ -2,16 +2,16 @@ import React from 'react'
 import * as style from "./Select.module.less"
 
 type Props = {
-    children: React.ReactNode,
+  optionsList: string[],
 }
 
-const Select: React.FC<Props> = ({
-    children,
-}) => {
+const Select: React.FC<Props> = ({ optionsList }) => {
   return (
-    <div className={style.wrapper}>
-        {children}
-    </div>
+    <select className={style.wrapper}>
+        { optionsList.map(option => (
+          <option value={option}>{option}</option>
+        )) }
+    </select>
   )
 }
 
