@@ -8,6 +8,8 @@ import ActiveLayout from '../../components/UI/layout/ActiveLayout/ActiveLayout'
 import Button from '../../components/UI/button/Button/Button'
 import Icon from '../../components/UI/icon/Icon/Icon'
 import ButtonWithIcon from '../../components/UI/button/ButtonWithIcon/ButtonWithIcon'
+import Text from '../../components/UI/text/Text/Text'
+import Title from '../../components/UI/text/Title/Title'
 
 type Props = {
     children?: React.ReactNode,
@@ -51,7 +53,7 @@ const DemoUI: React.FC<Props> = ({
                 justifyContent: "space-around",
                 alignItems: "center"
             }}>
-                <p>Base layout</p>
+                <Title>Base layout</Title>
             </Layout>
 
             {/* 3 types of active layout */}
@@ -62,7 +64,7 @@ const DemoUI: React.FC<Props> = ({
                 justifyContent: "space-around",
                 alignItems: "center"
             }}>
-                <p>Active layout (type = disabled)</p>
+                <Title>Active layout (type = disabled)</Title>
             </ActiveLayout>
 
             <ActiveLayout type={"hover"} style={{
@@ -72,7 +74,7 @@ const DemoUI: React.FC<Props> = ({
                 justifyContent: "space-around",
                 alignItems: "center"
             }}>
-                <p>Active layout (type = hover)</p>
+                <Title>Active layout (type = hover)</Title>
             </ActiveLayout>
 
             <ActiveLayout type={"active"} style={{
@@ -82,7 +84,7 @@ const DemoUI: React.FC<Props> = ({
                 justifyContent: "space-around",
                 alignItems: "center"
             }}>
-                <p>Active layout (type = active)</p>
+                <Title>Active layout (type = active)</Title>
             </ActiveLayout>
 
             {/* Items list of Active Layouts */}
@@ -90,13 +92,13 @@ const DemoUI: React.FC<Props> = ({
                 width: "auto"
             }}>
                 <Layout className={style.interactiveList}>
-                    <p>Список</p>
+                <Title>Список</Title>
                     {itemsList.map(item => (
                         <ActiveLayout key={item.id} type={"hover"} style={{
                             width: "100%",
                             height: "auto"
                         }}>
-                            {item.title}
+                            <Text>{item.title}</Text>
                         </ActiveLayout>
                     ))}
                 </Layout>
@@ -110,16 +112,16 @@ const DemoUI: React.FC<Props> = ({
                 }}>
                     {/* Item list of Buttons */}
                     <Layout className={style.buttonList}>
-                        <p>Конпки</p>
+                        <Title>Конпки</Title>
                         {itemsList.map(item => (
                             <Button key={item.id} style={{}}>
-                                {item.title}
+                                <Text>{item.title}</Text>
                             </Button>
                         ))}
                     </Layout>
 
                     <Layout className={style.buttonList}>
-                        <p>Иконки</p>
+                        <Title>Иконки</Title>
                         <Icon icon="ArrowIcon" />
                         <Icon icon="ArrowLeftIcon" />
                         <Icon icon="CloudIcon" />
