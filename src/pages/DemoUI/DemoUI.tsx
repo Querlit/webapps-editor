@@ -10,6 +10,7 @@ import Icon from '../../components/UI/icon/Icon/Icon'
 import ButtonWithIcon from '../../components/UI/button/ButtonWithIcon/ButtonWithIcon'
 import Text from '../../components/UI/text/Text/Text'
 import Title from '../../components/UI/text/Title/Title'
+import ColorPicker from '../../components/UI/select/ColorPicker/ColorPicker'
 
 type Props = {
     children?: React.ReactNode,
@@ -140,6 +141,10 @@ const DemoUI: React.FC<Props> = ({
                     </Layout>
                 </Layout>
             </Layout>
+
+            <ColorPicker onChange={color => {
+                console.log(color);
+            }}/>
         </div>
     )
 }
