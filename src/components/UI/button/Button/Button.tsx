@@ -7,18 +7,20 @@ type Props = {
     type?: "button" | "lever",
     style?: React.CSSProperties,
     invisibleBorder?: boolean,
-    onClick?: (isActive: boolean) => {},
+    active?: boolean,
+    onClick?: (isActive: boolean) => void,
     disable?: boolean
 }
 
-const Button: React.FC<Props> = ({ children, className, style, 
+const Button: React.FC<Props> = ({ children, className, style, active=false,
   onClick=()=>{}, type="button", invisibleBorder=false, disable=false}) => {
   const [isActive, setIsActive] = useState(false)
   return (
-    <button className={[ className, internalStyle.wrapper, isActive ? internalStyle.active : "" ].join(" ").trim()} 
+    <button className={[ className, internalStyle.wrapper, isActive || active ? internalStyle.active : "" ].join(" ").trim()} 
       style={{
         ...style,
-        // borderColor: invisibleBorder ? "transparent" : ""
+        border: invisibleBorder ? "none" : "",
+        boxShadow: invisibleBorder ? "none" : ""
       }} onClick={() => {
         if (type === "lever") setIsActive(!isActive)
         onClick(isActive)

@@ -1,17 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 import * as style from "./SliderSelect.module.less"
 
+import Button from '../../button/Button/Button'
+import Text from '../../text/Text/Text'
+import Layout from '../../layout/Layout/Layout'
+
 type Props = {
-    children: React.ReactNode,
+  optionsList?: string[],
+  onChange?: (option: string) => void,
+  defaultActiveIndex?: number,
 }
 
-const SliderSelect: React.FC<Props> = ({
-    children,
-}) => {
+const SliderSelect: React.FC<Props> = ({ optionsList=[], onChange=()=>{}, defaultActiveIndex=0 }) => {
+  const [activeButton, setActiveButton] = useState(optionsList[defaultActiveIndex])
   return (
-    <div className={style.wrapper}>
-        {children}
-    </div>
+    <Layout className={style.wrapper}>
+      { optionsList.map((option, index) => (
+        <Button key={index} onClick={() => {
+          setActiveButton(option)
+          onChange(option)
+        }} active={option === activeButton} invisibleBorder={true}>
+          <Text fontWeight={option === activeButton ? 500 : 300}>{option}</Text>
+        </Button>
+      )) }
+    </Layout>
   )
 }
 
