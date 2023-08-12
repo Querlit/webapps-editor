@@ -11,6 +11,7 @@ import ButtonWithIcon from '../../components/UI/button/ButtonWithIcon/ButtonWith
 import Text from '../../components/UI/text/Text/Text'
 import Title from '../../components/UI/text/Title/Title'
 import ColorPicker from '../../components/UI/select/ColorPicker/ColorPicker'
+import Input from '../../components/UI/input/Input/Input'
 
 type Props = {
     children?: React.ReactNode,
@@ -145,6 +146,12 @@ const DemoUI: React.FC<Props> = ({
             <ColorPicker onChange={color => {
                 console.log(color);
             }}/>
+
+            <Layout className={style.buttonList}>
+                <Input placeholder='Имя'/>
+                <Input placeholder='Фамилия'/>
+                <ButtonWithIcon icon="InputIcon" />
+            </Layout>
         </div>
     )
 }

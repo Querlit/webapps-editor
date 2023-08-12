@@ -1,17 +1,24 @@
-import React from 'react'
-import * as style from "./Input.module.less"
+import React, { useState } from 'react'
+import * as internalStyle from "./Input.module.less"
 
 type Props = {
-    children: React.ReactNode,
+  placeholder?: string,
+  style?: React.CSSProperties,
+  className?: string,
+  onChange?: (value: string) => void
+  invisibleBorder?: boolean
 }
 
-const Input: React.FC<Props> = ({
-    children,
-}) => {
+const Input: React.FC<Props> = ({ placeholder, style, className, onChange=()=>{}, invisibleBorder=false }) => {
+  const [value, setValue] = useState("")
   return (
-    <div className={style.wrapper}>
-        {children}
-    </div>
+    <input type="text" className={[internalStyle.wrapper, className].join(" ").trim()} value={value} onChange={(e) => {
+      onChange(e.target.value)
+      setValue(e.target.value)
+    }} placeholder={placeholder} style={{
+      ...style,
+      "borderColor": invisibleBorder ? "transparent" : undefined
+    }}/>
   )
 }
 

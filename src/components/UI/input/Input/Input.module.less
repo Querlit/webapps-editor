@@ -1,4 +1,21 @@
 
+@import "variables.less";
+
 .wrapper {
-    
+    height: 100%;
+    width: 100%;
+    font-family: "Inter", sans-serif;
+    font-size: @small-font-size;
+    color: @text-light-color;
+    border-radius: 5px;
+    border: @medium-border-thickness solid @border-dark-color;
+    outline: none;
+    background-color: @background-light-color;
+
+    padding: 5px;
+    transition: 0.1s ease-out;
+    &:focus {
+        border: @medium-border-thickness solid @border-dark-color;
+        background-color: @background-dark-color;
+    }
 }
