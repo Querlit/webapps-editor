@@ -22,11 +22,30 @@ import RowHorizontalIcon from "~/src/assets/icons/row-horizontal.svg"
 import RowVerticalIcon from "~/src/assets/icons/row-vertical.svg"
 import SaveIcon from "~/src/assets/icons/save.svg"
 import TextIcon from "~/src/assets/icons/text.svg"
+import AddSquareIcon from "~/src/assets/icons/add-square.svg"
+import AnchorIcon from "~/src/assets/icons/anchor.svg"
+import AttentionIcon from "~/src/assets/icons/attention.svg"
+import BackArrowIcon from "~/src/assets/icons/back-arrow.svg"
+import ComponentIcon from "~/src/assets/icons/component.svg"
+import LayersIcon from "~/src/assets/icons/layers.svg"
+import LockIcon from "~/src/assets/icons/lock.svg"
+import MinusIcon from "~/src/assets/icons/minus.svg"
+import PlayIcon from "~/src/assets/icons/play.svg"
+import PlusIcon from "~/src/assets/icons/plus.svg"
+import QuestionMarkIcon from "~/src/assets/icons/question-mark.svg"
+import RemoveIcon from "~/src/assets/icons/remove.svg"
+import SLetterIcon from "~/src/assets/icons/s-letter.svg"
+import SearchIcon from "~/src/assets/icons/search.svg"
+import SettingsIcon from "~/src/assets/icons/settings.svg"
+import TrashIcon from "~/src/assets/icons/trash.svg"
+
 
 const IconsObject = { ArrowLeftIcon, ArrowRightIcon, ArrowIcon, CloudIcon, CopyrightIcon,
 DownloadIcon, FileIcon, FolderIcon, GridIcon, ImageIcon, InputIcon, MouseIcon,
 PresentionIcon, RectangleIcon, RightIndentIcon, RowHorizontalIcon, RowVerticalIcon,
-SaveIcon, TextIcon }
+SaveIcon, TextIcon, AddSquareIcon, AnchorIcon, AttentionIcon, BackArrowIcon, ComponentIcon,
+LayersIcon, LockIcon, MinusIcon, PlayIcon, PlusIcon, QuestionMarkIcon, RemoveIcon, SLetterIcon,
+SearchIcon, SettingsIcon, TrashIcon}
 
 type Props = {
   icon: IconsType,

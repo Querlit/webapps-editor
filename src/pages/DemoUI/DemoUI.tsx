@@ -12,6 +12,7 @@ import Text from '../../components/UI/text/Text/Text'
 import Title from '../../components/UI/text/Title/Title'
 import ColorPicker from '../../components/UI/select/ColorPicker/ColorPicker'
 import Input from '../../components/UI/input/Input/Input'
+import SearchInput from '../../components/UI/input/SearchInput/SearchInput'
 
 type Props = {
     children?: React.ReactNode,
@@ -138,7 +139,7 @@ const DemoUI: React.FC<Props> = ({
                         <ButtonWithIcon icon="CloudIcon" iconSize={24} />
                         <ButtonWithIcon icon="DownloadIcon" iconSize={24} />
                         <ButtonWithIcon icon="MouseIcon" iconSize={24} />
-                        <ButtonWithIcon icon="SaveIcon" iconSize={24} />
+                        <ButtonWithIcon icon="SaveIcon" iconSize={24} disable/>
                     </Layout>
                 </Layout>
             </Layout>
@@ -150,8 +151,11 @@ const DemoUI: React.FC<Props> = ({
             <Layout className={style.buttonList}>
                 <Input placeholder='Имя'/>
                 <Input placeholder='Фамилия'/>
-                <ButtonWithIcon icon="InputIcon" />
+                <ButtonWithIcon icon="PlayIcon" />
             </Layout>
+
+            <SearchInput placeholder='Введите запрос...'/>
+
         </div>
     )
 }

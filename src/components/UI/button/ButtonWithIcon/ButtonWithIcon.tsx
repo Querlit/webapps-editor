@@ -14,10 +14,10 @@ type Props = {
 } & ButtonProps
 
 const ButtonWithIcon: React.FC<Props> = ({ icon, iconSize, style, className, 
-  invisibleBorder=false, onClick, type}) => {
+  invisibleBorder=false, onClick, type, disable=false}) => {
   return (
     <Button style={{...style}} className={[internalStyle.wrapper, className].join(" ").trim()}
-      invisibleBorder={invisibleBorder} onClick={onClick} type={type}
+      invisibleBorder={invisibleBorder} onClick={onClick} type={type} disable={disable}
     >
       <Icon icon={icon} style={{height: iconSize, width: iconSize}}/>
     </Button>

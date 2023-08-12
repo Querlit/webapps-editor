@@ -8,9 +8,11 @@ type Props = {
     style?: React.CSSProperties,
     invisibleBorder?: boolean,
     onClick?: (isActive: boolean) => {},
+    disable?: boolean
 }
 
-const Button: React.FC<Props> = ({ children, className, style, onClick=()=>{}, type="button", invisibleBorder=false, }) => {
+const Button: React.FC<Props> = ({ children, className, style, 
+  onClick=()=>{}, type="button", invisibleBorder=false, disable=false}) => {
   const [isActive, setIsActive] = useState(false)
   return (
     <button className={[ className, internalStyle.wrapper, isActive ? internalStyle.active : "" ].join(" ").trim()} 
@@ -20,8 +22,7 @@ const Button: React.FC<Props> = ({ children, className, style, onClick=()=>{}, t
       }} onClick={() => {
         if (type === "lever") setIsActive(!isActive)
         onClick(isActive)
-      }}
-      >
+      }} disabled={disable} >
         {children}
     </button>
   )

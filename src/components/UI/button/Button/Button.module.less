@@ -6,7 +6,7 @@
     margin: @medium-border-thickness - @light-border-thickness;
     background-color: @background-light-color;
 
-    border: @light-border-thickness solid @border-dark-color;
+    border: @regular-border-thickness solid @border-dark-color;
     border-radius: @border-radius;
 
     transition: 0.1s ease-out;
@@ -15,6 +15,16 @@
 
     &:hover {
         background-color: @background-dark-color;
+    }
+
+    &:disabled {
+        box-shadow: none;
+        background-color: @background-light-color;
+        border: @light-border-thickness solid @border-light-color;
+
+        & * {
+            filter: @filter-border-color-light;
+        }
     }
 }
 

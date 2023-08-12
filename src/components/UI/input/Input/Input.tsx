@@ -7,12 +7,14 @@ type Props = {
   className?: string,
   onChange?: (value: string) => void
   invisibleBorder?: boolean
+  type?: "text" | "password"
 }
 
-const Input: React.FC<Props> = ({ placeholder, style, className, onChange=()=>{}, invisibleBorder=false }) => {
+const Input: React.FC<Props> = ({ placeholder, style, className,
+  onChange=()=>{}, invisibleBorder=false, type="text" }) => {
   const [value, setValue] = useState("")
   return (
-    <input type="text" className={[internalStyle.wrapper, className].join(" ").trim()} value={value} onChange={(e) => {
+    <input type={type} className={[internalStyle.wrapper, className].join(" ").trim()} value={value} onChange={(e) => {
       onChange(e.target.value)
       setValue(e.target.value)
     }} placeholder={placeholder} style={{
@@ -22,4 +24,5 @@ const Input: React.FC<Props> = ({ placeholder, style, className, onChange=()=>{}
   )
 }
 
+export type { Props }
 export default Input
