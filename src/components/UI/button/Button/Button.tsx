@@ -4,25 +4,28 @@ import * as internalStyle from "./Button.module.less"
 type Props = {
     children?: React.ReactNode,
     className?: string,
-    active?: boolean,
-    style?: React.CSSProperties
+    type?: "button" | "lever",
+    style?: React.CSSProperties,
+    invisibleBorder?: boolean,
+    onClick?: (isActive: boolean) => {},
 }
 
-const Button: React.FC<Props> = ({
-    children,
-    className,
-    active,
-    style
-}) => {
+const Button: React.FC<Props> = ({ children, className, style, onClick=()=>{}, type="button", invisibleBorder=false, }) => {
   const [isActive, setIsActive] = useState(false)
   return (
-    <button className={[
-      internalStyle.wrapper,
-      isActive ? internalStyle.active : ""
-    ].join(" ").trim()} style={style} onClick={() => setIsActive(!isActive)}>
+    <button className={[ className, internalStyle.wrapper, isActive ? internalStyle.active : "" ].join(" ").trim()} 
+      style={{
+        ...style,
+        // borderColor: invisibleBorder ? "transparent" : ""
+      }} onClick={() => {
+        if (type === "lever") setIsActive(!isActive)
+        onClick(isActive)
+      }}
+      >
         {children}
     </button>
   )
 }
 
+export type { Props }
 export default Button

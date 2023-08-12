@@ -1,5 +1,5 @@
 import React from 'react'
-import * as style from "./Icon.module.less"
+import * as internalStyle from "./Icon.module.less"
 
 import type { IconsType } from "./type"
 
@@ -29,14 +29,13 @@ PresentionIcon, RectangleIcon, RightIndentIcon, RowHorizontalIcon, RowVerticalIc
 SaveIcon, TextIcon }
 
 type Props = {
-  icon: IconsType
+  icon: IconsType,
+  style?: React.CSSProperties,
 }
 
-const Icon: React.FC<Props> = ({
-  icon
-}) => {
+const Icon: React.FC<Props> = ({ icon, style }) => {
   return (
-    <img src={IconsObject[icon]} className={style.wrapper} />
+    <img src={IconsObject[icon]} className={internalStyle.wrapper} style={style}/>
   )
 }
 

@@ -1,21 +1,25 @@
 import React from 'react'
-import * as style from "./ButtonWithIcon.module.less"
+import * as internalStyle from "./ButtonWithIcon.module.less"
 
 import Button from '../Button/Button'
 import Icon from '../../icon/Icon/Icon'
 
 import type { IconsType } from '../../icon/Icon/type'
+import type { Props as ButtonProps} from '../Button/Button'
 
 type Props = {
-    icon: IconsType
-}
+  className?: string,
+  icon: IconsType,
+  iconSize?: string | number,
+} & ButtonProps
 
-const ButtonWithIcon: React.FC<Props> = ({
-    icon,
-}) => {
+const ButtonWithIcon: React.FC<Props> = ({ icon, iconSize, style, className, 
+  invisibleBorder=false, onClick, type}) => {
   return (
-    <Button>
-      <Icon icon={icon} />
+    <Button style={{...style}} className={[internalStyle.wrapper, className].join(" ").trim()}
+      invisibleBorder={invisibleBorder} onClick={onClick} type={type}
+    >
+      <Icon icon={icon} style={{height: iconSize, width: iconSize}}/>
     </Button>
   )
 }

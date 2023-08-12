@@ -114,7 +114,7 @@ const DemoUI: React.FC<Props> = ({
                     <Layout className={style.buttonList}>
                         <Title>Конпки</Title>
                         {itemsList.map(item => (
-                            <Button key={item.id} style={{}}>
+                            <Button key={item.id} type={"lever"}>
                                 <Text>{item.title}</Text>
                             </Button>
                         ))}
@@ -122,7 +122,7 @@ const DemoUI: React.FC<Props> = ({
 
                     <Layout className={style.buttonList}>
                         <Title>Иконки</Title>
-                        <Icon icon="ArrowIcon" />
+                        <Icon icon="ArrowIcon"/>
                         <Icon icon="ArrowLeftIcon" />
                         <Icon icon="CloudIcon" />
                         <Icon icon="DownloadIcon" />
@@ -131,12 +131,12 @@ const DemoUI: React.FC<Props> = ({
                     </Layout>
 
                     <Layout className={style.buttonList}>
-                        <ButtonWithIcon icon="ArrowIcon" />
-                        <ButtonWithIcon icon="ArrowLeftIcon" />
-                        <ButtonWithIcon icon="CloudIcon" />
-                        <ButtonWithIcon icon="DownloadIcon" />
-                        <ButtonWithIcon icon="MouseIcon" />
-                        <ButtonWithIcon icon="SaveIcon" />
+                        <ButtonWithIcon icon="ArrowIcon" iconSize={24} type={"lever"} />
+                        <ButtonWithIcon icon="ArrowLeftIcon" iconSize={24} />
+                        <ButtonWithIcon icon="CloudIcon" iconSize={24} />
+                        <ButtonWithIcon icon="DownloadIcon" iconSize={24} />
+                        <ButtonWithIcon icon="MouseIcon" iconSize={24} />
+                        <ButtonWithIcon icon="SaveIcon" iconSize={24} />
                     </Layout>
                 </Layout>
             </Layout>
