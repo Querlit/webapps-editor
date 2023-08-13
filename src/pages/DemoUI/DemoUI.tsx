@@ -7,7 +7,6 @@ import Layout from '../../components/UI/layout/Layout/Layout'
 import ActiveLayout from '../../components/UI/layout/ActiveLayout/ActiveLayout'
 import Button from '../../components/UI/button/Button/Button'
 import Icon from '../../components/UI/icon/Icon/Icon'
-import ButtonWithIcon from '../../components/UI/button/ButtonWithIcon/ButtonWithIcon'
 import Text from '../../components/UI/text/Text/Text'
 import Title from '../../components/UI/text/Title/Title'
 import ColorPicker from '../../components/UI/select/ColorPicker/ColorPicker'
@@ -136,12 +135,24 @@ const DemoUI: React.FC<Props> = ({
                     </Layout>
 
                     <Layout className={style.buttonList}>
-                        <ButtonWithIcon icon="ArrowIcon" iconSize={24} type={"lever"} />
-                        <ButtonWithIcon icon="ArrowLeftIcon" iconSize={24} />
-                        <ButtonWithIcon icon="CloudIcon" iconSize={24} />
-                        <ButtonWithIcon icon="DownloadIcon" iconSize={24} />
-                        <ButtonWithIcon icon="MouseIcon" iconSize={24} />
-                        <ButtonWithIcon icon="SaveIcon" iconSize={24} disable/>
+                        <Button disable>
+                            <Icon icon='ArrowIcon' style={{width: 24}} />
+                        </Button>
+                        <Button>
+                            <Icon icon='ArrowLeftIcon' style={{width: 24}} />
+                        </Button>
+                        <Button>
+                            <Icon icon='CloudIcon' style={{width: 24}} />
+                        </Button>
+                        <Button>
+                            <Icon icon='DownloadIcon' style={{width: 24}} />
+                        </Button>
+                        <Button>
+                            <Icon icon='MouseIcon' style={{width: 24}} />
+                        </Button>
+                        <Button>
+                            <Icon icon='SaveIcon' style={{width: 24}} />
+                        </Button>
                     </Layout>
                 </Layout>
             </Layout>
@@ -153,7 +164,9 @@ const DemoUI: React.FC<Props> = ({
             <Layout className={style.buttonList}>
                 <Input placeholder='Имя'/>
                 <Input placeholder='Фамилия'/>
-                <ButtonWithIcon icon="PlayIcon" />
+                <Button>
+                    <Icon icon="PlayIcon" />
+                </Button>
             </Layout>
 
             <SearchInput placeholder='Введите запрос...'/>
