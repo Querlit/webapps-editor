@@ -171,7 +171,7 @@ const DemoUI: React.FC<Props> = ({
 
             <SearchInput placeholder='Введите запрос...'/>
 
-            <SliderSelect optionsList={["opt1", "opt2", "opt3"]} onChange={option => {}}/>
+            <SliderSelect optionsList={["option1", "option2", "option3", "option4", "option5"]} onChange={option => {}}/>
 
             <Select optionsList={["opt1", "opt2", "opt3"]} />
 

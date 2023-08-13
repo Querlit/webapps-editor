@@ -10,14 +10,18 @@ type Props = {
 
 const Button: React.FC<Props> = ({ children, className, active=false, invisibleBorder=false, ...props}) => {
   return (
-    <button className={[
-        className, 
-        internalStyle.wrapper, 
+    <div className={[
+        internalStyle.wrapper,
         active ? internalStyle.active : "",
-        invisibleBorder ? internalStyle.invisibleBorder : ""
-      ].join(" ").trim()} {...props}>
-        {children}
-    </button>
+      ].join(" ").trim()}>
+      <button className={[
+          className, 
+          internalStyle.button,
+          invisibleBorder ? internalStyle.invisibleBorder : ""
+        ].join(" ").trim()} {...props}>
+          {children}
+      </button>
+    </div>
   )
 }
 

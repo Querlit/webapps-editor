@@ -54,7 +54,9 @@ type Props = {
 
 const Icon: React.FC<Props> = ({ icon, style }) => {
   return (
-    <img src={IconsObject[icon]} className={internalStyle.wrapper} style={style}/>
+    <div>
+      <img src={IconsObject[icon]} className={internalStyle.wrapper} style={style}/>
+    </div>
   )
 }
 
