@@ -7,8 +7,10 @@ import {
 } from "react-router-dom"
 
 import * as style from "./App.module.less"
+
 import SomePage from "./SomePage/SomePage"
 import DemoUI from "./DemoUI/DemoUI"
+import PageNotFound from "./PageNotFound/PageNotFound"
 
 import reloader from "../tools/reloader"
 import { io } from "socket.io-client"
@@ -23,6 +25,7 @@ export default function App() {
                 <Routes>
                     <Route path="/" element={<SomePage />} />
                     <Route path="/demo" element={<DemoUI />} />
+                    <Route path="/*" element={<PageNotFound />} />
                 </Routes>
             </div>
         </Router>

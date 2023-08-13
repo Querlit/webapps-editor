@@ -1,0 +1,47 @@
+// @import "../../../variables.less";
+@import "variables.less";
+
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: @background-light-color;
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+}
+
+.logo_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+}
+
+.header {
+    font-family: "Montserrat", sans-serif;
+    font-size: 50px;
+    color: @text-light-color;
+    margin: auto 0;
+}
+
+.text {
+    font-family: 'Inter', sans-serif;
+    color: @text-light-color;
+
+    & > a {
+        text-decoration: underline;
+        color: rgb(148, 170, 235);
+    }
+}
