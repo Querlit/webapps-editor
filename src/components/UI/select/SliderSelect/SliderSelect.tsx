@@ -9,9 +9,10 @@ type Props = {
   optionsList?: string[],
   onChange?: (option: string) => void,
   defaultActiveIndex?: number,
+  invisibleBorder?: boolean
 }
 
-const SliderSelect: React.FC<Props> = ({ optionsList=[], onChange=()=>{}, defaultActiveIndex=0 }) => {
+const SliderSelect: React.FC<Props> = ({ optionsList=[], onChange=()=>{}, defaultActiveIndex=0, invisibleBorder=false }) => {
   const [activeButton, setActiveButton] = useState(optionsList[defaultActiveIndex])
   return (
     <Layout className={style.wrapper}>
@@ -19,8 +20,8 @@ const SliderSelect: React.FC<Props> = ({ optionsList=[], onChange=()=>{}, defaul
         <Button key={index} onClick={() => {
           setActiveButton(option)
           onChange(option)
-        }} active={option === activeButton} invisibleBorder={true}>
-          <Text fontWeight={option === activeButton ? 500 : 300}>{option}</Text>
+        }} active={option === activeButton} invisibleBorder={invisibleBorder}>
+          <Text fontWeight={option === activeButton ? 600 : 300}>{option}</Text>
         </Button>
       )) }
     </Layout>

@@ -2,18 +2,12 @@ import React, { useState } from 'react'
 import * as internalStyle from "./ColorPicker.module.less"
 
 type Props = {
-  style?: React.CSSProperties,
   className?: string,
-  onChange?: (color: string) => void
-}
+} & React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>
 
-const ColorPicker: React.FC<Props> = ({ onChange=()=>{}, className, style }) => {
-  const [color, setColor] = useState("")
+const ColorPicker: React.FC<Props> = ({ className, style, ...props }) => {
   return (
-    <input type="color" value={color} onChange={e => {
-      setColor(e.target.value);
-      onChange(e.target.value);
-    }} className={[internalStyle.wrapper, className].join(" ").trim()} style={style}/>
+    <input type="color" className={[internalStyle.wrapper, className].join(" ").trim()} {...props} />
   )
 }
 
