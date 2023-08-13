@@ -118,7 +118,7 @@ const DemoUI: React.FC<Props> = ({
                     <Layout className={style.buttonList}>
                         <Title>Конпки</Title>
                         {itemsList.map(item => (
-                            <Button key={item.id} type={"lever"}>
+                            <Button key={item.id}>
                                 <Text>{item.title}</Text>
                             </Button>
                         ))}
@@ -135,7 +135,7 @@ const DemoUI: React.FC<Props> = ({
                     </Layout>
 
                     <Layout className={style.buttonList}>
-                        <Button disable>
+                        <Button disabled>
                             <Icon icon='ArrowIcon' style={{width: 24}} />
                         </Button>
                         <Button>
