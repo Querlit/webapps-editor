@@ -12,7 +12,6 @@ import Title from '../../components/UI/text/Title/Title'
 import ColorPicker from '../../components/UI/select/ColorPicker/ColorPicker'
 import Input from '../../components/UI/input/Input/Input'
 import SearchInput from '../../components/UI/input/SearchInput/SearchInput'
-import SliderSelect from '../../components/UI/select/SliderSelect/SliderSelect'
 import Select from '../../components/UI/select/Select/Select'
 
 type Props = {
@@ -170,8 +169,6 @@ const DemoUI: React.FC<Props> = ({
             </Layout>
 
             <SearchInput placeholder='Введите запрос...'/>
-
-            <SliderSelect optionsList={["option1", "option2", "option3", "option4", "option5"]} onChange={option => {}}/>
 
             <Select optionsList={["opt1", "opt2", "opt3"]} />
 
