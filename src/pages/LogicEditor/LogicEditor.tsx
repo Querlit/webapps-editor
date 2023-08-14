@@ -19,7 +19,7 @@ type Props = {
 const LogicEditor: React.FC<Props> = ({}) => {
     return (
         <div className={style.wrapper}>
-            <TopBar className={style.topBar} />
+            <TopBar className={style.topBar} projectTitle={"My first project"} />
             <LeftFeildBar className={style.leftFeildBar} iconsList={["ComponentIcon", "LayersIcon", "AnchorIcon", "SLetterIcon"]} />
             <TaskBar className={style.taskBar} />
             <RightFeildBar className={style.rightFeildBar} text='Hero' icon="RowVerticalIcon" />

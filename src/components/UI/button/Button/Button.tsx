@@ -13,11 +13,11 @@ const Button: React.FC<Props> = ({ children, className, active=false, invisibleB
     <div className={[
         internalStyle.wrapper,
         active ? internalStyle.active : "",
+        invisibleBorder ? internalStyle.invisibleBorder : ""
       ].join(" ").trim()}>
       <button className={[
           className, 
-          internalStyle.button,
-          invisibleBorder ? internalStyle.invisibleBorder : ""
+          internalStyle.button
         ].join(" ").trim()} {...props}>
           {children}
       </button>

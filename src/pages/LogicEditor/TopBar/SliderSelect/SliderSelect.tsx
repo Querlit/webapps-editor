@@ -1,27 +1,29 @@
 import React, { ReactElement, useState } from 'react'
 import * as style from "./SliderSelect.module.less"
 
-import Button from '../../button/Button/Button'
-import Text from '../../text/Text/Text'
-import Layout from '../../layout/Layout/Layout'
+import Button from '../../../../components/UI/button/Button/Button'
+import Text from '../../../../components/UI/text/Text/Text'
+import Layout from '../../../../components/UI/layout/Layout/Layout'
 
 type Props = {
   optionsList?: string[] | ReactElement[],
   onChange?: (option: number) => void,
   defaultActiveIndex?: number,
-  invisibleBorder?: boolean
+  invisibleBorder?: boolean,
+  className?: string
 }
 
-const SliderSelect: React.FC<Props> = ({ optionsList=[], onChange=()=>{}, defaultActiveIndex=0, invisibleBorder=false }) => {
+const SliderSelect: React.FC<Props> = ({ optionsList=[], onChange=()=>{}, defaultActiveIndex=0, invisibleBorder=false,
+  className }) => {
   const [activeButton, setActiveButton] = useState(defaultActiveIndex)
   return (
-    <Layout className={style.wrapper}>
+    <Layout className={[style.wrapper, className].join(" ").trim()}>
       { optionsList.map((option, index) => (
         <Button key={index} onClick={() => {
           setActiveButton(index)
           onChange(index)
         }} active={index === activeButton} invisibleBorder={invisibleBorder}>
-          <Text fontWeight={index === activeButton ? 600 : 300}>{option}</Text>
+          <Text fontWeight={index === activeButton ? 500 : 300}>{option}</Text>
         </Button>
       )) }
     </Layout>

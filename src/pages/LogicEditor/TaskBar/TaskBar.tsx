@@ -24,10 +24,10 @@ const TaskBar: React.FC<Props> = ({ className }) => {
                 <Button>
                     <Icon icon={"ArrowLeftIcon"} />
                 </Button>
-                <Button>
+                <Button disabled>
                     <Icon icon={"ArrowRightIcon"} />
                 </Button>
-                <Button>
+                <Button disabled>
                     <Icon icon={"AttentionIcon"} />
                 </Button>
                 <Button>
@@ -51,13 +51,13 @@ const TaskBar: React.FC<Props> = ({ className }) => {
                 <Button>
                     <Icon icon={"RemoveIcon"} />
                 </Button>
-                <Button>
+                <Button disabled>
                     <Icon icon={"RowVerticalIcon"} />
                 </Button>
-                <Button>
+                <Button disabled>
                     <Icon icon={"RowHorizontalIcon"} />
                 </Button>
-                <Button>
+                <Button disabled>
                     <Icon icon={"TrashIcon"} />
                 </Button>
                 <Button>

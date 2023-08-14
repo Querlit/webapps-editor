@@ -5,4 +5,42 @@
 .wrapper {
     height: 100%;
     width: 100%;
+
+    padding-left: 16px;
+    padding-right: 16px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.buttonGroup {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    & button {
+        padding: 4.5px;
+    }
+
+    & img {
+        height: 24px;
+        width: 24px;
+    }
+
+    .alignment(@margin: 10px);
+}
+
+.label {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.selectComponent {
+
+    position: absolute;
+    left: 71%;
+    transform: translateX(-50%);
 }

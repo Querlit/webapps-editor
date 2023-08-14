@@ -1,0 +1,23 @@
+
+@import "variables.less";
+
+.wrapper {
+    padding: 1px;
+
+    display: flex;
+    flex-direction: row;
+
+    border: @medium-border-thickness solid @border-dark-color ;
+
+    & > div > button {
+        padding: 5px 8px;
+
+    }
+
+    & > * {
+        margin-right: 8px;
+        &:last-child {
+            margin-right: 0px;
+        }
+    }
+}
