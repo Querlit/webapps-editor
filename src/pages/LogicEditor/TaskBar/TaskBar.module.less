@@ -1,0 +1,48 @@
+// @import "../../../variables.less";
+@import "variables.less";
+
+
+.wrapper {
+    height: 100%;
+    width: 100%;
+
+    padding-left: 16px;
+    padding-right: 16px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    & button {
+        padding: 4.5px;
+    }
+
+    & img {
+        height: 24px;
+        width: 24px;
+    }
+}
+
+.buttonGroup {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .alignment(@margin: 10px);
+}
+
+.zoomGroup {
+    .alignment(@margin: 3px);
+    // margin: auto;
+    position: absolute;
+    left: 50%;
+    // margin-left: calc(50% - 34.6px);
+    transform: translateX(-50%);
+
+    & > p {
+        min-width: 70px;
+        text-align: center;
+    }
+}
+

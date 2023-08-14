@@ -39,3 +39,18 @@
 
 // Color but in filter
 @filter-color-light: invert(62%) sepia(46%) saturate(255%) hue-rotate(179deg) brightness(88%) contrast(86%);
+
+// Mixins
+.alignment(@margin: 10px) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    & > * {
+        margin-right: @margin;
+    }
+
+    & > *:last-child {
+        margin-right: 0px;   
+    }
+}
