@@ -5,8 +5,6 @@ WebApps builder with logical blocks, design components and the freedom of action
 
 # ToDo's
 
-- Develop UI components
-- Implement the intended design
 - Start developing logic
 
 # Dependencies
@@ -49,8 +47,7 @@ npm run parcel:watch
 Production mode
 
 ```bash
-npm run parcel:build
-
+npm run parcel:prod
 ```
 
 In both cases all files will export into /build directory.
