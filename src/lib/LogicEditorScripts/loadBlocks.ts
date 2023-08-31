@@ -1,4 +1,4 @@
-import { DroppableData } from "../../LogicBlocks/InvidibleDroppable/InvidibleDroppable"
+import { DroppableData } from "../../components/LogicBlocks/InvidibleDroppable/InvidibleDroppable"
 
 interface BlockType {
     value: any

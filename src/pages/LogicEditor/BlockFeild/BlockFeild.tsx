@@ -12,7 +12,7 @@ import CommonDraggable from '../../../components/LogicBlocks/CommonDraggable/Com
 import CommonDroppable from '../../../components/LogicBlocks/CommonDroppable/CommonDroppable'
 import InvidibleDroppable, { DroppableData } from '../../../components/LogicBlocks/InvidibleDroppable/InvidibleDroppable'
 
-import { loadBlocks, moveBlock } from '../../../components/lib/LogicEditorScripts/loadBlocks'
+import { loadBlocks, moveBlock } from '../../../lib/LogicEditorScripts/loadBlocks'
 
 type Props = {
     className: string
@@ -39,13 +39,14 @@ const BlockFeild: React.FC<Props> = ({ className }) => {
                 { BlocksScript.map((BlockLine, lineIndex) => (
                     <>
                         <InvidibleDroppable direction='column' row={null} column={lineIndex} key={`c-n-${lineIndex}`} />
-                        <div className={style.blockline}>
+                        <div className={style.blockline} key={`blockline-${lineIndex}`}>
                             { BlockLine.map((Block, blockIndex) => (
                                 <>
                                     <InvidibleDroppable direction='row' row={blockIndex} column={lineIndex} key={`r-${blockIndex}-${lineIndex}`}/>
                                     <CommonDraggable
                                         contains={[ Block.value ]}
                                         id={Block.id || 0}
+                                        key={Block.id}
                                     />
                                 </>
                             )) }
