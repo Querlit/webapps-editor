@@ -28,9 +28,8 @@ const InvidibleDroppable: React.FC<Props> = ({  direction, row, column, disabled
     return (
         <div ref={setNodeRef} className={[
             internalStyle.wrapper,
-            isOver ? (
-                direction == "column" ? internalStyle.hoverColumn : internalStyle.hoverRow
-            ) : ""
+            direction === "column" ? internalStyle.columnWrapper : internalStyle.rowWrapper,
+            isOver ? internalStyle.hover : ""
         ].join(" ").trim()} />
     );
 }
