@@ -25,7 +25,7 @@ const LeftFeildBar: React.FC<Props> = ({ className, iconsList=[], defaultIconInd
                 <Button active={active === index} onClick={() => {
                     setActive(index)
                     onChange(index)
-                }}>
+                }} key={icon}>
                     <Icon icon={icon} style={{height: active === index ? 24 : 28, width: active === index ? 24 : 28}}/>
                 </Button>
             )) }

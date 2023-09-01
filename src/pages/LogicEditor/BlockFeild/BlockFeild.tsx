@@ -66,24 +66,24 @@ const BlockFeild: React.FC<Props> = ({ className }) => {
         <Layout className={[style.wrapper, className].join(" ").trim()}>
             <DndContext onDragEnd={handleDragEnd} onDragStart={onDragStart}>
                 { BlocksScript !== null &&  BlocksScript.map((BlockLine, lineIndex) => (
-                    <>
+                    <React.Fragment key={`column-${lineIndex}`}>
                         <InvidibleDroppable direction='column' row={null} column={lineIndex} key={`c-n-${lineIndex}`} />
                         <div className={style.blockline} key={`blockline-${lineIndex}`}>
                             { BlockLine.map((Block, blockIndex) => (
-                                <>
+                                <React.Fragment key={`row-${blockIndex}`}>
                                     <InvidibleDroppable direction='row' row={blockIndex} column={lineIndex} key={`r-${blockIndex}-${lineIndex}`}/>
                                     <CommonDraggable
                                         contains={[ Block.value ]}
                                         id={Block.id || 0}
                                         key={Block.id}
                                     />
-                                </>
+                                </React.Fragment>
                             )) }
                             <InvidibleDroppable direction='row' row={null} column={lineIndex} key={`r-c-${lineIndex}`}/> { /* last invisible droppable in row */ }
                         </div>
-                    </>
+                    </React.Fragment>
                 )) }
-                <InvidibleDroppable direction='column' row={null} column={null} key={`c-n-n`} /> { /* last invisible droppable in column */ }
+                <InvidibleDroppable direction='column' row={null} column={null} /> { /* last invisible droppable in column */ }
             </DndContext>
         </Layout>
     )
