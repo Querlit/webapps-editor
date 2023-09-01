@@ -11,7 +11,6 @@ export interface BlockStructureState {
   }
 }
 
-
 const initialState: BlockStructureState = {
   blocks: null,
   config: {

@@ -7,14 +7,15 @@ import { useDraggable } from '@dnd-kit/core';
 import { useSelector } from 'react-redux';
 
 import { RootState } from '../../../store/store';
+import { BlockType } from '../../../types/LogicEditorTypes/logicalBlocks';
 
 type Props = {
-    contains: (string | React.ReactNode)[]
-    id: number
+    block: BlockType
 }
 
-const CommonDraggable: React.FC<Props> = ({ contains, id }) => {
-    const {attributes, listeners, setNodeRef, transform} = useDraggable({ id,  });
+const CommonDraggable: React.FC<Props> = ({ block }) => {
+    const { id } = block
+    const {attributes, listeners, setNodeRef, transform} = useDraggable({ id: id || 0 });
 
     const { id: activeId, isDragging } = useSelector((state: RootState) => state.activeBlock)
 
@@ -25,10 +26,7 @@ const CommonDraggable: React.FC<Props> = ({ contains, id }) => {
 
     
     return (
-        <button 
-            // onClick={() => }
-            onClick={() => console.log(1)}
-            onDragEnd={() => console.log(2)}
+        <button
             ref={setNodeRef}
             style={style}
             className={[
@@ -39,7 +37,7 @@ const CommonDraggable: React.FC<Props> = ({ contains, id }) => {
             {...listeners}
             {...attributes}
         >
-            { contains }
+            <p>{ block.value }</p>
         </button>
     );
 }

@@ -1,8 +1,12 @@
 
+export type BlockValueType = any
+export type BlockTypeType = "variable" | "method" | "construction" | "operator" | string
+export type BlockId = number
+
 export interface BlockType {
-  value: any,
-  type: string,
-  id?: number
+  value: BlockValueType,
+  type: BlockTypeType,
+  id?: BlockId,
   args?: BlockType[][] | [],
   logic?: BlockType[][] | [],
   methods?: BlockType[] | [],
