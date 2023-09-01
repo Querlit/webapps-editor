@@ -1,0 +1,44 @@
+
+@import "variables.less";
+
+.wrapper {
+    min-width: 45px;
+    box-sizing: border-box;
+    padding: 6px 8px;
+    border: 2px solid @draggable-border-color;
+    border-radius: 5px;
+    background-color: @draggable-background-color;
+    color: @draggable-text-color;
+    outline: none;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+    // transition: 1s ease-out;
+
+    & > *:first-child {
+        margin-left: 10px;
+    }
+
+    & > * {
+        margin-left: 15px;
+    }
+    
+    & > *:last-child {
+        margin-right: 10px;
+    }
+
+    box-shadow: @box-shadow;
+    font-size: 20px;
+    font-weight: @medium-font-thicnkess;
+}
+
+.active {
+    background-color: @draggable-background-dark-color;
+}
+
+.dragging {
+    font-weight: 500;
+}

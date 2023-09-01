@@ -1,6 +1,6 @@
 
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import * as style from "./BlockFeild.module.less"
 
@@ -10,11 +10,13 @@ import { DndContext, DragEndEvent, DragStartEvent } from '@dnd-kit/core'
 
 import CommonDraggable from '../../../components/LogicBlocks/CommonDraggable/CommonDraggable'
 import CommonDroppable from '../../../components/LogicBlocks/CommonDroppable/CommonDroppable'
-import InvidibleDroppable, { DroppableData } from '../../../components/LogicBlocks/InvidibleDroppable/InvidibleDroppable'
+import InvidibleDroppable from '../../../components/LogicBlocks/InvidibleDroppable/InvidibleDroppable'
 
-import { loadBlocks, moveBlock } from '../../../lib/LogicEditorScripts/loadBlocks'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { startDragging, stopDragging } from '../../../store/reducers/activeBlockSlice'
+import { RootState } from '../../../store/store'
+import { DroppableLocatorType } from '../../../types/LogicEditorTypes/DragAndDrop'
+import { dragBlock, setupBlocks } from '../../../store/reducers/blockStructureSlice'
 
 type Props = {
     className: string
@@ -22,28 +24,48 @@ type Props = {
 
 const BlockFeild: React.FC<Props> = ({ className }) => {
 
-    const [ BlocksScript, setBlockScript ] = useState(loadBlocks)
-    const [ , forceRender ] = useState({})
+    // const [ BlocksScript, setBlockScript ] = useState(loadBlocks)
+    const { blocks: BlocksScript, config} = useSelector((state: RootState) => state.blockStructure)
+    // const [ , forceRender ] = useState({})
 
-    const activeDispatch = useDispatch()
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        dispatch(setupBlocks([
+            [
+                {
+                    value: "Hello",
+                    type: "string"
+                },
+                {
+                    value: "Hello",
+                    type: "string"
+                },
+                {
+                    value: "Hello",
+                    type: "string"
+                },
+            ]
+        ]))
+    }, [])
 
     function handleDragEnd(event: DragEndEvent) {
-        activeDispatch(stopDragging())
+        dispatch(stopDragging())
         if (!event.over) return
 
-        const BlockId = event.active.id as number
-        const placeData = event.over?.data.current as DroppableData
+        const targetId = event.active.id as number
+        const targetPalceData = event.over?.data.current as DroppableLocatorType
 
-        setBlockScript(value => moveBlock(value, BlockId, placeData))
-        forceRender({})
+        // setBlockScript(value => moveBlock(value, BlockId, placeData))
+        dispatch(dragBlock({ targetId, targetPalceData }))
     }
 
-    const onDragStart = (event: DragStartEvent) => activeDispatch(startDragging(event.active.id as number))
+    const onDragStart = (event: DragStartEvent) => dispatch(startDragging(event.active.id as number))
 
     return (
         <Layout className={[style.wrapper, className].join(" ").trim()}>
             <DndContext onDragEnd={handleDragEnd} onDragStart={onDragStart}>
-                { BlocksScript.map((BlockLine, lineIndex) => (
+                { BlocksScript !== null &&  BlocksScript.map((BlockLine, lineIndex) => (
                     <>
                         <InvidibleDroppable direction='column' row={null} column={lineIndex} key={`c-n-${lineIndex}`} />
                         <div className={style.blockline} key={`blockline-${lineIndex}`}>
